@@ -58,9 +58,6 @@ const handleYesClick = () => {
 
   ideaText.textContent = `How about this romantic date idea: ${selectedDateIdea}`;
 });
-
-  });
-
   // Replace yesBtn with the new letsGoBtn
   yesBtn.replaceWith(letsGoBtn);
 };
