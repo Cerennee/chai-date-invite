@@ -41,11 +41,24 @@ const handleYesClick = () => {
   letsGoBtn.style.width = "200px"; // Adjust the width as needed
 
   // Add a click event listener to prompt the user with random romantic date ideas
-  letsGoBtn.addEventListener("click", () => {
-    const randomIndex = Math.floor(Math.random() * dateIdeas.length);
-    const selectedDateIdea = dateIdeas[randomIndex];
+ letsGoBtn.addEventListener("click", () => {
+  const randomIndex = Math.floor(Math.random() * dateIdeas.length);
+  const selectedDateIdea = dateIdeas[randomIndex];
 
-    alert(`How about this romantic date idea: ${selectedDateIdea}`);
+  // Create or update a paragraph to show the idea
+  let ideaText = document.getElementById("date-idea-text");
+  if (!ideaText) {
+    ideaText = document.createElement("p");
+    ideaText.id = "date-idea-text";
+    ideaText.style.marginTop = "20px";
+    ideaText.style.fontSize = "20px";
+    ideaText.style.color = "#333";
+    document.body.appendChild(ideaText);
+  }
+
+  ideaText.textContent = `How about this romantic date idea: ${selectedDateIdea}`;
+});
+
   });
 
   // Replace yesBtn with the new letsGoBtn
